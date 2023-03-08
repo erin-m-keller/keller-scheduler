@@ -135,9 +135,7 @@ function checkEntryMinutes(currentMinute,entryMin,elem) {
     else if (currentMinute >= 30 && currentMinute < 45) {
         if (entryMin === 30) {
             addRemoveClasses(elem,"past-entry","future-entry","current-entry");
-        } else if (entryMin === 0) {
-            addRemoveClasses(elem,"current-entry","future-entry","past-entry");
-        } else if (entryMin === 15) {
+        } else if (entryMin === 0 || entryMin === 15) {
             addRemoveClasses(elem,"current-entry","future-entry","past-entry");
         } else {
             addRemoveClasses(elem,"past-entry","current-entry","future-entry");
@@ -147,13 +145,9 @@ function checkEntryMinutes(currentMinute,entryMin,elem) {
     else if (currentMinute >= 45 && currentMinute < 60) {
         if (entryMin === 45) {
             addRemoveClasses(elem,"past-entry","future-entry","current-entry");
-        } else if (entryMin === 0) {
+        } else if (entryMin === 0 || entryMin === 15 || entryMin === 30) {
             addRemoveClasses(elem,"current-entry","future-entry","past-entry");
-        } else if (entryMin === 15) {
-            addRemoveClasses(elem,"current-entry","future-entry","past-entry");
-        } else if (entryMin === 30) {
-            addRemoveClasses(elem,"current-entry","future-entry","past-entry");
-        } 
+        }
     }
 }/**
  * @addRemoveClasses
